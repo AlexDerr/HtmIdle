@@ -1,7 +1,7 @@
 <template>
   <div>
     <ConsoleHeader />
-    <TotalCountHeader />
+    <TotalHeader />
     <div class="inline-div">
       <Idle />
       <Shop v-if="shopEnabled"/>
@@ -10,10 +10,10 @@
 </template>
 
 <script setup lang="ts">
-const totalCount = useTotalCount();
+const totalLines = useTotalLines();
 
 const shopEnabled = computed(() => {
-  return totalCount.value >= 10;
+  return totalLines.value >= 10;
 })
 </script>
 

@@ -1,16 +1,18 @@
 <template>
 	<div class="container-div main-div">
-	  <h3>Total Count: {{ totalCount }} </h3>
 		<p>
-			Current Count: {{ currentCount }}
+			Available Lines: {{ availableLines }}
 		</p>
-	  <button @click="handleMainClick()">Click</button>
+	  <button
+			@click="handleMainClick()"
+		>
+			Write Lines
+		</button>
 	</div>
   </template>
   
 <script setup lang="ts">
-const totalCount = useTotalCount();
-const currentCount = useCurrentCount();
+const availableLines = useAvailableLines();
 </script>
 
 

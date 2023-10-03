@@ -1,10 +1,10 @@
 <template>
 	<div class="container-div main-div">
 		<p>
-			Available Lines: {{ availableLines }}
+			Available Lines: {{ mainStore.availableLines }}
 		</p>
 	  <button
-			@click="handleMainClick()"
+			@click="mainStore.handleMainClick()"
 		>
 			Write Lines
 		</button>
@@ -12,7 +12,9 @@
   </template>
   
 <script setup lang="ts">
-const availableLines = useAvailableLines();
+import { useMainStore } from "~/store/mainStore";
+
+const mainStore = useMainStore();
 </script>
 
 

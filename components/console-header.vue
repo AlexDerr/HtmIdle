@@ -1,13 +1,17 @@
 <template>
 	<div class="container-div console-div">
-		<p v-for="message in consoleMessages.slice().reverse()">
+		<p v-for="message in messagesStore.consoleMessages.slice().reverse()">
 			~$ {{ message }}
 		</p>
 	</div>
 </template>
 
 <script setup lang="ts">
-let consoleMessages = useConsoleMessages();
+import { useMessagesStore } from "~/store/messagesStore";
+
+const messagesStore = useMessagesStore();
+
+messagesStore.addMessage("test message");
 </script>
 
 <style>

@@ -10,10 +10,12 @@
 </template>
 
 <script setup lang="ts">
-const totalLines = useTotalLines();
+import { useMainStore } from "~/store/mainStore"
+
+const mainStore = useMainStore();
 
 const shopEnabled = computed(() => {
-  return totalLines.value >= 10;
+  return mainStore.totalLines >= 10;
 })
 </script>
 

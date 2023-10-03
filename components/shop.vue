@@ -1,19 +1,20 @@
 <template>
 	<div class="container-div shop-div">
 		<h3>Shop</h3>
-		{{ autoTypers }}
+		{{ shopStore.autoTypers }}
 		<button
-			@click="purchaseAutoTyper()"
+			@click="shopStore.purchaseAutoTyper()"
 		>
 			Auto Typer
 		</button>
-		Cost: {{ costAutoTyper }}
+		Cost: {{ shopStore.costAutoTyper }}
 	</div>
 </template>
 
 <script setup lang="ts">
-const autoTypers = useAutoTypers();
-const costAutoTyper = useCostAutoTyper();
+import { useShopStore } from "~/store/shopStore";
+
+const shopStore = useShopStore();
 </script>
 
 <style>

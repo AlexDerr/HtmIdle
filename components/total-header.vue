@@ -1,11 +1,13 @@
 <template>
 	<div class="container-div">
-	  <h3>Total Lines: {{ totalLines }} </h3>
+	  <h3>Total Lines: {{ mainStore.totalLines }} </h3>
 	</div>
 </template>
 
 <script setup lang="ts">
-const totalLines = useTotalLines();
+import { useMainStore } from "~/store/mainStore"
+
+const mainStore = useMainStore();
 </script>
 
 <style>
